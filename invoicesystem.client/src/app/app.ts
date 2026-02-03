@@ -1,5 +1,13 @@
+export interface WeatherForecast {
+  date: string;
+  temperatureC: number;
+  temperatureF: number;
+  summary: string;
+}
+
 import { HttpClient } from '@angular/common/http';
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -16,15 +24,12 @@ export class App implements OnInit {
     this.getForecasts();
   }
 
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-      (result) => {
-        this.forecasts = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+  async getForecasts() {
+    try {
+      this.forecasts = await firstValueFrom(this.http.get<WeatherForecast[]>('/weatherforecast'));
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   protected readonly title = signal('invoicesystem.client');
