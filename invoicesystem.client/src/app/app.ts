@@ -1,13 +1,7 @@
-export interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
-}
-
 import { HttpClient } from '@angular/common/http';
-import { Component, signal, OnInit } from '@angular/core';
-import { firstValueFrom } from 'rxjs';
+import { Component, signal, OnInit } from '@angular/core'
+import { Customer } from './models/customer';
+import { CustomerService } from './services/customer.service';
 
 @Component({
   selector: 'app-root',
@@ -16,20 +10,17 @@ import { firstValueFrom } from 'rxjs';
   styleUrl: './app.css'
 })
 export class App implements OnInit {
-  public forecasts: WeatherForecast[] = [];
+  public customers: Customer[] = [];
+  constructor(private http: HttpClient, private customerService: CustomerService) { }
 
-  constructor(private http: HttpClient) {}
-
-  ngOnInit() {
-    this.getForecasts();
+  ngOnInit(): void {
+    this.loadCustomers();
   }
 
-  async getForecasts() {
-    try {
-      this.forecasts = await firstValueFrom(this.http.get<WeatherForecast[]>('/weatherforecast'));
-    } catch (error) {
-      console.error(error);
-    }
+  loadCustomers(): void {
+    this.customerService.getCustomers().subscribe(customers => {
+      this.customers = customers;
+    });
   }
 
   protected readonly title = signal('invoicesystem.client');

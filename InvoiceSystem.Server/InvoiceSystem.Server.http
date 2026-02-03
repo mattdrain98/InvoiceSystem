@@ -1,6 +1,6 @@
 @InvoiceSystem.Server_HostAddress = http://localhost:5192
 
-GET {{InvoiceSystem.Server_HostAddress}}/weatherforecast/
+GET {{InvoiceSystem.Server_HostAddress}}/customers/
 Accept: application/json
 
 ###
