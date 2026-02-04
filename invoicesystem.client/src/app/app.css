@@ -4,6 +4,11 @@
     text-align: center;
 }
 
+.headerTable {
+    color: darkred;
+    border-bottom: 5px solid black;
+}
+
 th, td {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -11,4 +16,18 @@ th, td {
 
 table {
     margin: 0 auto;
+}
+
+.websiteheader {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #5289c6; /* dark gray */
+  color: white;
 }

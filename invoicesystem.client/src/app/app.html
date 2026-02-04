@@ -1,8 +1,15 @@
-<h1 id="tableLabel">Customers</h1>
+<nav class="navbar">
+  <div class="brand">Invoice System</div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/customers" routerLinkActive="active">Customers</a></li>
+    <li><a routerLink="/invoices" routerLinkActive="active">Invoices</a></li>
+  </ul>
+</nav>
 
 <table *ngIf="customers.length > 0">
   <thead>
-    <tr>
+    <tr  class="headerTable">
       <th>Name</th>
       <th>Billing Address</th>
       <th>Email</th>
