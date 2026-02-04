@@ -36,11 +36,11 @@ export class CustomerService {
    * Toggle between dummy data and API here
    */
   getCustomers(): Observable<Customer[]> {
-    // 👉 Dummy mode
+    // dummy data
     return of(this.dummyCustomers);
 
-    // 👉 API mode (enable later)
-    // return this.http.get<Customer[]>(this.apiUrl);
+    // API data (enable later)
+    // return this.http.get<Customer[]>(this.apiUrl); //this will be the data we pull from the ASP.NET web API that pulls SQL data 
   }
 
   getCustomerById(id: number): Observable<Customer | undefined> {
