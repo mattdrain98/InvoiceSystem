@@ -6,8 +6,8 @@ import { CustomerService } from './services/customer.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
-  standalone: false,
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  standalone: false
 })
 export class App implements OnInit {
   public customers: Customer[] = [];

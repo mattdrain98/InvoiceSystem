@@ -1,17 +1,2 @@
-
-<table *ngIf="customers.length > 0">
-  <thead>
-    <tr class="headerTable">
-      <th>Name</th>
-      <th>Billing Address</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let c of customers">
-      <td>{{ c.name }}</td>
-      <td>{{ c.billingAddress }}</td>
-      <td>{{ c.email }}</td>
-    </tr>
-  </tbody>
-</table>
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>

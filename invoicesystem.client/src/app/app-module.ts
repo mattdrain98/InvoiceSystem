@@ -1,23 +1,27 @@
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './shared/components/navbar.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CustomersComponent } from './pages/customers/customers.component';
+import { AppRoutingModule } from './app-routing-module';
+import { CustomerService } from './services/customer.service';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    NavbarComponent,
+    HomeComponent,
+    CustomersComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule,
-    AppRoutingModule,
-    NgbModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [
-    provideBrowserGlobalErrorListeners()
-  ],
+  providers: [CustomerService],
   bootstrap: [App]
 })
 export class AppModule { }
