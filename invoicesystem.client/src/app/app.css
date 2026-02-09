@@ -6,7 +6,7 @@
 
 .headerTable {
     color: darkred;
-    border-bottom: 5px solid black;
+    border-bottom: 1px solid black;
 }
 
 th, td {
@@ -23,11 +23,3 @@ table {
   font-weight: bold;
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: #5289c6; /* dark gray */
-  color: white;
-}

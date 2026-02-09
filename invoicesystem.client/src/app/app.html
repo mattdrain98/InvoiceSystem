@@ -1,15 +1,7 @@
-<nav class="navbar">
-  <div class="brand">Invoice System</div>
-
-  <ul class="nav-links">
-    <li><a routerLink="/customers" routerLinkActive="active">Customers</a></li>
-    <li><a routerLink="/invoices" routerLinkActive="active">Invoices</a></li>
-  </ul>
-</nav>
 
 <table *ngIf="customers.length > 0">
   <thead>
-    <tr  class="headerTable">
+    <tr class="headerTable">
       <th>Name</th>
       <th>Billing Address</th>
       <th>Email</th>
@@ -23,6 +15,3 @@
     </tr>
   </tbody>
 </table>
-
-<!-- Optional: show message if no customers -->
-<p *ngIf="customers.length === 0">No customers available.</p>
